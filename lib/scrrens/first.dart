@@ -52,7 +52,11 @@ class FirstWelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [BreadCrumbs( first: Colors.teal,second: Colors.tealAccent,third: Colors.tealAccent),RoundedArrowButton(onPressed: (){})],
+                  children: [BreadCrumbs( first: Colors.teal,second: Colors.tealAccent,third: Colors.tealAccent),RoundedArrowButton(onPressed: (
+                    
+                  ){
+                    Navigator.pushNamed(context, '/second');
+                  })],
                 ),
               ),
            

@@ -53,8 +53,13 @@ class SecondWelcome extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    BreadCrumbs(first: Colors.tealAccent,second: Colors.teal,third: Colors.tealAccent),
-                    RoundedArrowButton(onPressed: () {})
+                    BreadCrumbs(
+                        first: Colors.tealAccent,
+                        second: Colors.teal,
+                        third: Colors.tealAccent),
+                    RoundedArrowButton(onPressed: () {
+                      Navigator.pushNamed(context, '/third');
+                    })
                   ],
                 ),
               ),
