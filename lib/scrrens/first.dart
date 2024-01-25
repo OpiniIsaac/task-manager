@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/widgets/breadcrumbs.dart';
+import 'package:task_managaer/widgets/roundedArrowButton.dart';
 
 class FirstWelcomeScreen extends StatelessWidget {
   const FirstWelcomeScreen({super.key});
@@ -47,11 +48,14 @@ class FirstWelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-Padding(
-  padding: const EdgeInsets.all(16.0),
-  child:   BreadCrumbs(),
-)
-
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [BreadCrumbs(),RoundedArrowButton(onPressed: (){})],
+                ),
+              ),
+           
             ],
           ),
         ),
