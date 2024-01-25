@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/scrrens/Welcome.dart';
 import 'package:task_managaer/scrrens/first.dart';
+import 'package:task_managaer/scrrens/login.dart';
 import 'package:task_managaer/scrrens/secondWelcome.dart';
 import 'package:task_managaer/scrrens/third-onbarding.dart';
 
@@ -22,14 +23,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
+      // initialRoute: '/',
       routes: {
            '/':(context) => Welcome(),
         '/first':(context) => FirstWelcomeScreen(),
           '/second':(context) => SecondWelcome(),
             '/third':(context) => ThirdWelcome(),
+             '/login':(context) => Login(),
               },
-      // home: FirstWelcomeScreen(),
+      // home: Login(),
     );
   }
 }

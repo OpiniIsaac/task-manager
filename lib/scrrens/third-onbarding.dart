@@ -54,7 +54,9 @@ class ThirdWelcome extends StatelessWidget {
                   children: [
                     BreadCrumbs(first: Colors.tealAccent,second: Colors.tealAccent,third: Colors.teal),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                             Navigator.pushNamed(context, '/login');
+                      },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.teal, // Set the background color
                         shape: RoundedRectangleBorder(
