@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_managaer/widgets/breadcrumbs.dart';
 
 class FirstWelcomeScreen extends StatelessWidget {
   const FirstWelcomeScreen({super.key});
@@ -10,7 +11,8 @@ class FirstWelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          alignment: Alignment.center, // Center the children within the Container
+          alignment:
+              Alignment.center, // Center the children within the Container
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +23,8 @@ class FirstWelcomeScreen extends StatelessWidget {
                   width: 200,
                   height: 300,
                   fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) => const Text('Error loading image'),
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Text('Error loading image'),
                 ),
               ),
               SizedBox(height: 20),
@@ -35,22 +38,20 @@ class FirstWelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
                 child: Text(
                   'Break tasks into smaller chunks, set goals with deadlines, turn off notifications to eliminate distractions. Take regular breaks for enhanced productivity.',
-                
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  
-                ],
-              )
+Padding(
+  padding: const EdgeInsets.all(16.0),
+  child:   BreadCrumbs(),
+)
+
             ],
           ),
         ),
