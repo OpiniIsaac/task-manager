@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/widgets/breadcrumbs.dart';
-import 'package:task_managaer/widgets/roundedArrowButton.dart';
 
 class ThirdWelcome extends StatelessWidget {
   const ThirdWelcome({super.key});
@@ -53,8 +52,17 @@ class ThirdWelcome extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    BreadCrumbs(first: Colors.tealAccent,second: Colors.teal,third: Colors.tealAccent),
-                    RoundedArrowButton(onPressed: () {})
+                    BreadCrumbs(first: Colors.tealAccent,second: Colors.tealAccent,third: Colors.teal),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.teal, // Set the background color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0), // Set the rounded corners
+                        ),
+                      ),
+                      child: const Text('Get Started',style: TextStyle(color: Colors.white)),
+                    ),
                   ],
                 ),
               ),
