@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:task_managaer/widgets/breadcrumbs.dart';
 import 'package:task_managaer/widgets/roundedArrowButton.dart';
 
-class FirstWelcomeScreen extends StatelessWidget {
-  const FirstWelcomeScreen({super.key});
+class SecondWelcome extends StatelessWidget {
+  const SecondWelcome({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const imagePath = 'images/firstscreen.png';
+    const imagePath = 'images/secondscreen.png';
 
     return Scaffold(
       body: SafeArea(
@@ -52,10 +52,12 @@ class FirstWelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [BreadCrumbs( first: Colors.teal,second: Colors.tealAccent,third: Colors.tealAccent),RoundedArrowButton(onPressed: (){})],
+                  children: [
+                    BreadCrumbs(first: Colors.tealAccent,second: Colors.teal,third: Colors.tealAccent),
+                    RoundedArrowButton(onPressed: () {})
+                  ],
                 ),
               ),
-           
             ],
           ),
         ),
