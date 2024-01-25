@@ -22,12 +22,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      initialRoute: '/',
       routes: {
+           '/':(context) => Welcome(),
         '/first':(context) => FirstWelcomeScreen(),
           '/second':(context) => SecondWelcome(),
             '/third':(context) => ThirdWelcome(),
               },
-      home: FirstWelcomeScreen(),
+      // home: FirstWelcomeScreen(),
     );
   }
 }
