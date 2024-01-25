@@ -21,7 +21,7 @@ class SecondWelcome extends StatelessWidget {
               Center(
                 child: Image.asset(
                   imagePath,
-                  width: 200,
+                  width: 300,
                   height: 300,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) =>
@@ -32,7 +32,7 @@ class SecondWelcome extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  'Stay Organized',
+                  'Increase Productivity',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -42,7 +42,7 @@ class SecondWelcome extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
                 child: Text(
-                  'Break tasks into smaller chunks, set goals with deadlines, turn off notifications to eliminate distractions. Take regular breaks for enhanced productivity.',
+                  'Organize tasks with categories, prioritize using due dates, group related tasks. Regularly review your task list for efficient management.',
                   style: TextStyle(
                     fontSize: 16,
                   ),
