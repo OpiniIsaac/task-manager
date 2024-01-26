@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_managaer/scrrens/Welcome.dart';
 import 'package:task_managaer/scrrens/first.dart';
 import 'package:task_managaer/scrrens/login.dart';
+import 'package:task_managaer/scrrens/register.dart';
 import 'package:task_managaer/scrrens/secondWelcome.dart';
 import 'package:task_managaer/scrrens/third-onbarding.dart';
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           '/second':(context) => SecondWelcome(),
             '/third':(context) => ThirdWelcome(),
              '/login':(context) => Login(),
+             '/signup':(context) => Register()
               },
       // home: Login(),
     );

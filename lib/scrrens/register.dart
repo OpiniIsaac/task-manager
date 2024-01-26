@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key});
+class Register extends StatelessWidget {
+  const Register({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class Login extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Welcome Back",
+                "Register",
                 style: TextStyle(
                   color: Colors.teal,
                   fontSize: 28.0,
@@ -29,6 +29,28 @@ class Login extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Text(
+                    "Username",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      hintText: "example",
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal, width: 2.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal, width: 2.0),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16.0),
                   Text(
                     "Email",
                     style: TextStyle(
@@ -79,21 +101,7 @@ class Login extends StatelessWidget {
                     },
                   ),
                   SizedBox(height: 8.0),
-                  Center(
-                    child: GestureDetector(
-                      onTap: () {
-                        // Navigate to forget password page
-                        print("Forget Password Clicked");
-                      },
-                      child: Text(
-                        "Forget Password?",
-                        style: TextStyle(
-                          color: Colors.teal,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
+                
                 ],
               ),
               SizedBox(height: 24.0),
@@ -138,11 +146,11 @@ class Login extends StatelessWidget {
               SizedBox(height: 24.0),
               RichText(
                 text: TextSpan(
-                  text: 'New here? ',
+                  text: 'Already have an account?  ',
                   style: TextStyle(color: Colors.grey),
                   children: [
                     TextSpan(
-                      text: 'Create an account',
+                      text: 'Login here',
                       style: TextStyle(
                         color: Colors.teal,
                         fontWeight: FontWeight.bold,
@@ -150,7 +158,8 @@ class Login extends StatelessWidget {
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
                           // Navigate to the signup page
-                          Navigator.pushNamed(context, '/signup');
+                          Navigator.pushNamed(context, '/login');
+                          // print("Create Account Link Clicked");
                         },
                     ),
                   ],
