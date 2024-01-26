@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class Inputs extends StatelessWidget {
   final String label;
-  final String hintText;
+  final String labelText;
   final Icon icons;
-  const Inputs({ required this.hintText, required this.icons,required this.label, Key? key }):super(key: key);
+  const Inputs({ required this.label, required this.icons,required this.labelText, Key? key }):super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class Inputs extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Email:',
+            label,
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),
@@ -22,8 +22,8 @@ class Inputs extends StatelessWidget {
           TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-              prefixIcon: Icon(Icons.email), // Email Icon
-              hintText: 'example@gmail.com',
+              prefixIcon: icons, // Email Icon
+              hintText: labelText,
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.teal, width: 2.0),
               ),
