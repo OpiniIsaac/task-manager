@@ -10,6 +10,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -21,30 +22,41 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Column(
+      body: TabBarView(
+        controller: _tabController,
         children: [
-          TabBar(
-            controller: _tabController,
-            tabs: [
-              Tab(text: 'My Task'),
-              Tab(text: 'Co'),
-            ],
+          Center(
+            child: Text('My Task Content'),
           ),
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                // Contents of Tab 1
-                Center(
-                  child: Text('Tab 1 Content'),
-                ),
-                
-                // Contents of Tab 2
-                Center(
-                  child: Text('Tab 2 Content'),
-                ),
-              ],
-            ),
+          Center(
+            child: Text('Collaborative Task Content'),
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+            _tabController.index = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: 'Dashboard',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assignment),
+            label: 'My Tasks',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'Collaboration',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
         ],
       ),
