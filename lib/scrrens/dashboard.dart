@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_managaer/scrrens/Home.dart';
 import 'package:task_managaer/scrrens/Tasks.dart';
 import 'package:task_managaer/widgets/appbar.dart';
 
@@ -13,8 +14,9 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
 int _selectedIndex = 0;
 
   final List<Widget> _pages = [
+     HomePage(),
     Tasks(),
-    // ProfilePage(),
+   
     // SettingsPage(),
   ];
 
