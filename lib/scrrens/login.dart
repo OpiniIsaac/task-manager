@@ -15,89 +15,88 @@ class Login extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
-                child: Text(
-                  "Welcome Back",
-                  style: TextStyle(
-                    color: Colors.teal,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
+              Text(
+                "Welcome Back",
+                style: TextStyle(
+                  color: Colors.teal,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 24.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    "Email",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
+                    ),
                   ),
-                ),
-              ),
-              SizedBox(height: 16.0),
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Text(
-                      "Email",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                  SizedBox(height: 8.0),
+                  TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      hintText: "example@gmail.com",
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal, width: 2.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal, width: 2.0),
                       ),
                     ),
-                    SizedBox(height: 8.0),
-                    TextField(
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.email),
-                        hintText: "example@gmail.com",
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal, width: 2.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal, width: 2.0),
-                        ),
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    "Password",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      hintText: "Enter your password",
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal, width: 2.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal, width: 2.0),
                       ),
                     ),
-                    SizedBox(height: 16.0),
-                    Text(
-                      "Password",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 8.0),
-                    TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock),
-                        hintText: "Enter your password",
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal, width: 2.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal, width: 2.0),
-                        ),
-                      ),
-                      onChanged: (password) {
-                        // Hash the password using SHA-256
-                        // String hashedPassword = sha256.convert(utf8.encode(password)).toString();
-                        // print("Hashed Password: $hashedPassword");
-                        // You can store or use the hashedPassword as needed
+                    onChanged: (password) {
+                      // Hash the password using SHA-256
+                      // String hashedPassword = sha256.convert(utf8.encode(password)).toString();
+                      // print("Hashed Password: $hashedPassword");
+                      // You can store or use the hashedPassword as needed
+                    },
+                  ),
+                  SizedBox(height: 8.0),
+                  Center(
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to forget password page
+                        print("Forget Password Clicked");
                       },
-                    ),
-                    SizedBox(height: 8.0),
-                    Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          // Navigate to forget password page
-                          print("Forget Password Clicked");
-                        },
-                        child: Text(
-                          "Forget Password?",
-                          style: TextStyle(
-                            color: Colors.teal,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      child: Text(
+                        "Forget Password?",
+                        style: TextStyle(
+                          color: Colors.teal,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 24.0),
               Row(
                 children: [
                   Expanded(
@@ -122,24 +121,24 @@ class Login extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(height: 24.0),
+              Text("Or", style: TextStyle(fontSize: 16, color: Colors.grey)),
+              SizedBox(height: 8.0),
+              Text('Continue With', style: TextStyle(fontSize: 16, color: Colors.grey)),
               SizedBox(height: 16.0),
-              Text("Or"),
-              Text('Continue With'),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(googleLogo),
-                    SizedBox(width: 16.0), // Add space between logos
-                    Image.asset(appleLogo),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(googleLogo, height: 40.0),
+                  SizedBox(width: 16.0), // Add space between logos
+                  Image.asset(appleLogo, height: 40.0),
+                ],
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: 24.0),
               RichText(
                 text: TextSpan(
                   text: 'New here? ',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.grey),
                   children: [
                     TextSpan(
                       text: 'Create an account',
@@ -163,5 +162,4 @@ class Login extends StatelessWidget {
     );
   }
 }
-
 
