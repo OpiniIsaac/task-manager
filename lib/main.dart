@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             '/third':(context) => ThirdWelcome(),
              '/login':(context) => Login(),
              '/signup':(context) => Register(),
-             '/home':(context) => Home()
+             '/home':(context) => Dashboard()
               },
       // home: Login(),
     );

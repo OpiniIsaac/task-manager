@@ -1,46 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:task_managaer/scrrens/Tasks.dart';
 import 'package:task_managaer/widgets/appbar.dart';
 
-class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+class Dashboard extends StatefulWidget {
+  Dashboard({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Dashboard> createState() => _DashboardState();
 }
 
-class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-  int _currentIndex = 0;
+class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin {
+int _selectedIndex = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+  final List<Widget> _pages = [
+    Tasks(),
+    // ProfilePage(),
+    // SettingsPage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          Center(
-            child: Text('My Task Content'),
-          ),
-          Center(
-            child: Text('Collaborative Task Content'),
-          ),
-        ],
-      ),
+      body:  _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-            _tabController.index = index;
-          });
-        },
+     currentIndex: _selectedIndex,
+        selectedItemColor: Colors.teal,
+        onTap: _onItemTapped,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
@@ -59,13 +50,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             label: 'Settings',
           ),
         ],
+       // Color when item is not selected
       ),
     );
   }
 
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
+
 }
