@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/scrrens/Home.dart';
 import 'package:task_managaer/scrrens/Tasks.dart';
+// Fix typo here
 import 'package:task_managaer/widgets/appbar.dart';
 
 class Dashboard extends StatefulWidget {
@@ -11,12 +12,11 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin {
-int _selectedIndex = 0;
+  int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-     HomePage(),
+    MyHomePage (),
     Tasks(),
-   
     // SettingsPage(),
   ];
 
@@ -25,13 +25,14 @@ int _selectedIndex = 0;
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body:  _pages[_selectedIndex],
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-     currentIndex: _selectedIndex,
+        currentIndex: _selectedIndex,
         selectedItemColor: Colors.teal,
         onTap: _onItemTapped,
         items: [
@@ -52,10 +53,8 @@ int _selectedIndex = 0;
             label: 'Settings',
           ),
         ],
-       // Color when item is not selected
+        // Color when item is not selected
       ),
     );
   }
-
-
 }

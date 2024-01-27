@@ -1,58 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Circular Graph'),
-      ),
       body: Center(
-        child: PieChart(
-          PieChartData(
-            sections: [
-              PieChartSectionData(
-                color: Colors.teal,
-                value: 40,
-                title: 'Teal',
-                radius: 100,
-                titleStyle: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              PieChartSectionData(
-                color: Colors.tealAccent,
-                value: 60,
-                title: 'TealAccent',
-                radius: 100,
-                titleStyle: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-            ],
-            sectionsSpace: 0,
-            centerSpaceRadius: 80,
-          ),
+        child: SfCircularChart(
+          backgroundColor: Colors.white,
+          // dataLabelSettings: DataLabelSettings(isVisible: false), // Set isVisible to false
+          series: <CircularSeries>[
+            DoughnutSeries<Task, String>(
+              dataSource: [
+                Task('Task 1', true),
+                Task('Task 2', true),
+                Task('Task 3', true),
+                Task('Task 4', false), // Uncompleted task
+              ],
+              xValueMapper: (Task task, _) => task.name,
+              yValueMapper: (Task task, _) => task.completed ? 1 : 0,
+              pointColorMapper: (Task task, _) =>
+                  task.completed ? Colors.teal : Colors.grey[400],
+              // Adjust doughnut width
+              // innerRadius: 70,
+            ),
+          ],
         ),
       ),
     );
   }
+}
+
+class Task {
+  final String name;
+  final bool completed;
+
+  Task(this.name, this.completed);
 }
