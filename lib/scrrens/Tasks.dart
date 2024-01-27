@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/widgets/appbar.dart';
+import 'package:task_managaer/widgets/tasktile.dart';
 
 class Tasks extends StatelessWidget {
   @override
@@ -34,8 +35,9 @@ class Tasks extends StatelessWidget {
 class PersonalTasksTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Personal Tasks Content'),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TaskTile()
     );
   }
 }
