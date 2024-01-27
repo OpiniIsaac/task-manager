@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/scrrens/PersonalTaskTab.dart';
+import 'package:task_managaer/scrrens/TeamTask.dart';
 import 'package:task_managaer/widgets/tasktile.dart';
 
 
@@ -28,15 +29,6 @@ class Tasks extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class TeamTasksTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Team Tasks Content'),
     );
   }
 }
