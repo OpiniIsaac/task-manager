@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_managaer/widgets/appbar.dart';
+import 'package:task_managaer/scrrens/PersonalTaskTab.dart';
 import 'package:task_managaer/widgets/tasktile.dart';
+
 
 class Tasks extends StatelessWidget {
   @override
@@ -8,7 +9,6 @@ class Tasks extends StatelessWidget {
     return DefaultTabController(
       length: 2, // Number of tabs
       child: Scaffold(
-      
         body: Column(
           children: [
             TabBar(
@@ -28,16 +28,6 @@ class Tasks extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class PersonalTasksTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TaskTile()
     );
   }
 }
