@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/scrrens/Home.dart';
 import 'package:task_managaer/scrrens/Tasks.dart';
+import 'package:task_managaer/scrrens/TeamTask.dart';
 // Fix typo here
 import 'package:task_managaer/widgets/appbar.dart';
 
@@ -17,6 +18,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
   final List<Widget> _pages = [
     MyHomePage (),
     Tasks(),
+    TeamTasksTab(),
     // SettingsPage(),
   ];
 
