@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:task_managaer/scrrens/Home.dart';
 import 'package:task_managaer/scrrens/Tasks.dart';
 import 'package:task_managaer/scrrens/TeamTask.dart';
-// Fix typo here
+import 'package:task_managaer/scrrens/settingsPage.dart';
 import 'package:task_managaer/widgets/appbar.dart';
 
 class Dashboard extends StatefulWidget {
@@ -16,10 +16,10 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    MyHomePage (),
+    MyHomePage(),
     Tasks(),
     TeamTasksTab(),
-    // SettingsPage(),
+    SettingPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -36,6 +36,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.teal,
+        unselectedItemColor: Colors.tealAccent,
         onTap: _onItemTapped,
         items: [
           BottomNavigationBarItem(
@@ -55,7 +56,10 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
             label: 'Settings',
           ),
         ],
-        // Color when item is not selected
+        // Ensure labels are shown for all items
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
