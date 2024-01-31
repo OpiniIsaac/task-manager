@@ -35,7 +35,7 @@ class SecondWelcome extends StatelessWidget {
                 child: Text(
                   'Increase Productivity',
                   style: GoogleFonts.quicksand(
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -45,7 +45,9 @@ class SecondWelcome extends StatelessWidget {
                 child: Text(
                   'Organize tasks with categories, prioritize using due dates, group related tasks. Regularly review your task list for efficient management.',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                     
                   ),
                 ),
               ),

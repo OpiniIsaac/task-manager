@@ -33,8 +33,8 @@ class ThirdWelcome extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   'Collaborate Effectively',
-                  style: GoogleFonts.quicksand(
-                    fontSize: 24,
+                 style: GoogleFonts.quicksand(
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -43,8 +43,10 @@ class ThirdWelcome extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
                 child: Text(
                   'Use comments for updates and questions, share files related to tasks,. Schedule regular check-ins for effective communication and collaboration.',
-                  style: TextStyle(
-                    fontSize: 16,
+                 style: TextStyle(
+                    fontSize: 12,
+                  
+                     fontWeight: FontWeight.w400
                   ),
                 ),
               ),
@@ -61,7 +63,7 @@ class ThirdWelcome extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         primary: Colors.teal, // Set the background color
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0), // Set the rounded corners
+                          borderRadius: BorderRadius.circular(4.0), // Set the rounded corners
                         ),
                       ),
                       child: const Text('Get Started',style: TextStyle(color: Colors.white)),

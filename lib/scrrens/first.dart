@@ -34,7 +34,7 @@ class FirstWelcomeScreen extends StatelessWidget {
                 child: Text(
                   'Stay Organized',
                   style: GoogleFonts.quicksand(
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -43,6 +43,11 @@ class FirstWelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
                 child: Text(
                   'Break tasks into smaller chunks, set goals with deadlines, turn off notifications to eliminate distractions. Take regular breaks for enhanced productivity.',
+                  style: TextStyle(
+                    fontSize: 12,
+                  
+                     fontWeight: FontWeight.w400
+                  ),
                 ),
               ),
               Padding(
