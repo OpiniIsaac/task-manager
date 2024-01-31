@@ -5,7 +5,6 @@ import 'package:task_managaer/scrrens/TeamTask.dart';
 import 'package:task_managaer/scrrens/settingsPage.dart';
 import 'package:task_managaer/widgets/appbar.dart';
 
-
 class Dashboard extends StatefulWidget {
   Dashboard({Key? key}) : super(key: key);
 
@@ -13,7 +12,8 @@ class Dashboard extends StatefulWidget {
   State<Dashboard> createState() => _DashboardState();
 }
 
-class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMixin {
+class _DashboardState extends State<Dashboard>
+    with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
@@ -21,7 +21,6 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
     Tasks(),
     TeamTasksTab(),
     SettingPage(),
-
   ];
 
   void _onItemTapped(int index) {
@@ -39,10 +38,12 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
           _pages[_selectedIndex],
           Positioned(
             bottom: 16.0,
-            left: MediaQuery.of(context).size.width / 2 - 28.0, // Adjust the position as needed
+            left: MediaQuery.of(context).size.width / 2 -
+                28.0, // Adjust the position as needed
             child: FloatingActionButton(
               onPressed: () {
                 // Add your action here
+                Navigator.pushNamed(context, '/createtask');
               },
               backgroundColor: Colors.teal,
               child: Icon(Icons.add),

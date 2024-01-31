@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_managaer/scrrens/Notification.dart';
 import 'package:task_managaer/scrrens/Welcome.dart';
+import 'package:task_managaer/scrrens/createTask.dart';
 import 'package:task_managaer/scrrens/dashboard.dart';
 import 'package:task_managaer/scrrens/first.dart';
 import 'package:task_managaer/scrrens/login.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
              '/login':(context) => Login(),
              '/signup':(context) => Register(),
              '/home':(context) => Dashboard(),
-             '/notification':(context) => NoticationPage()
+             '/notification':(context) => NoticationPage(),
+             '/createtask':(context) => CreateTaskPage()
               },
       // home: Login(),
     );

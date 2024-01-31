@@ -16,72 +16,110 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
       appBar: AppBar(
         title: Text('Create Task'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Category:',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-            ),
-            DropdownButton<String>(
-              value: _selectedCategory,
-              onChanged: (String? newValue) {
-                setState(() {
-                  _selectedCategory = newValue!;
-                });
-              },
-              items: <String>['Work', 'Personal', 'Study', 'Other']
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-            ),
-            SizedBox(height: 16.0),
-            Text(
-              'Task:',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-            ),
-            TextField(
-              controller: _taskController,
-              maxLines: 3,
-              decoration: InputDecoration(
-                hintText: 'Enter your task...',
-                border: OutlineInputBorder(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'What type of task do you want to create?:',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
               ),
-            ),
-            SizedBox(height: 16.0),
-            Text(
-              'State:',
-              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-            ),
-            Row(
-              children: [
-                Expanded(
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.teal),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: DropdownButton<String>(
+                    value: _selectedCategory,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        _selectedCategory = newValue!;
+                      });
+                    },
+                    items: <String>['Work', 'Personal', 'Study', 'Other']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.teal),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'Describe your task:',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.teal),
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: TextField(
-                    controller: _stateController,
+                    controller: _taskController,
+                    maxLines: 3,
                     decoration: InputDecoration(
-                      hintText: 'Enter task state...',
-                      border: OutlineInputBorder(),
+                      hintText: 'Enter your task...',
+                      border: InputBorder.none,
                     ),
                   ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    // Add your action for the icon button here
-                  },
-                  icon: Icon(Icons.add),
+              ),
+              SizedBox(height: 16.0),
+              Text(
+                'Due date:',
+                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.teal),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: TextField(
+                          controller: _stateController,
+                          decoration: InputDecoration(
+                            hintText: 'Enter task state...',
+                            border: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                
+                ],
+              ),
+              SizedBox(height: 16.0),
+              // Outlined button at the bottom
+              OutlinedButton(
+                onPressed: () {
+                  // Add your action for the "Create Task" button here
+                },
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: Colors.teal),
+                  primary: Colors.teal,
+                  minimumSize: Size(double.infinity, 48.0),
                 ),
-              ],
-            ),
-          ],
+                child: Text('Create Task'),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-
