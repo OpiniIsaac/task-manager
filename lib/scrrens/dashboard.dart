@@ -5,6 +5,7 @@ import 'package:task_managaer/scrrens/TeamTask.dart';
 import 'package:task_managaer/scrrens/settingsPage.dart';
 import 'package:task_managaer/widgets/appbar.dart';
 
+
 class Dashboard extends StatefulWidget {
   Dashboard({Key? key}) : super(key: key);
 
@@ -20,6 +21,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
     Tasks(),
     TeamTasksTab(),
     SettingPage(),
+
   ];
 
   void _onItemTapped(int index) {
@@ -32,7 +34,22 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: _pages[_selectedIndex],
+      body: Stack(
+        children: [
+          _pages[_selectedIndex],
+          Positioned(
+            bottom: 16.0,
+            left: MediaQuery.of(context).size.width / 2 - 28.0, // Adjust the position as needed
+            child: FloatingActionButton(
+              onPressed: () {
+                // Add your action here
+              },
+              backgroundColor: Colors.teal,
+              child: Icon(Icons.add),
+            ),
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.teal,
@@ -56,7 +73,6 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
             label: 'Settings',
           ),
         ],
-        // Ensure labels are shown for all items
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
