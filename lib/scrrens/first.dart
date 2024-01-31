@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:task_managaer/widgets/breadcrumbs.dart';
 import 'package:task_managaer/widgets/roundedArrowButton.dart';
 
@@ -12,8 +13,7 @@ class FirstWelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          alignment:
-              Alignment.center, // Center the children within the Container
+          alignment: Alignment.center,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class FirstWelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   'Stay Organized',
-                  style: TextStyle(
+                  style: GoogleFonts.quicksand(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -43,23 +43,25 @@ class FirstWelcomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
                 child: Text(
                   'Break tasks into smaller chunks, set goals with deadlines, turn off notifications to eliminate distractions. Take regular breaks for enhanced productivity.',
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [BreadCrumbs( first: Colors.teal,second: Colors.tealAccent,third: Colors.tealAccent),RoundedArrowButton(onPressed: (
-                    
-                  ){
-                    Navigator.pushNamed(context, '/second');
-                  })],
+                  children: [
+                    BreadCrumbs(
+                        first: Colors.teal,
+                        second: Colors.tealAccent,
+                        third: Colors.tealAccent),
+                    RoundedArrowButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/second');
+                      },
+                    ),
+                  ],
                 ),
               ),
-           
             ],
           ),
         ),

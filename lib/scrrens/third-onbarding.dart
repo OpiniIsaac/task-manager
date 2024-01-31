@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:task_managaer/widgets/breadcrumbs.dart';
 
 class ThirdWelcome extends StatelessWidget {
@@ -32,7 +33,7 @@ class ThirdWelcome extends StatelessWidget {
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
                   'Collaborate Effectively',
-                  style: TextStyle(
+                  style: GoogleFonts.quicksand(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
