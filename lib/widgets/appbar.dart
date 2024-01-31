@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(60.0);
@@ -45,10 +46,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: Icon(Icons.notifications),
           onPressed: () {
             // Handle notification icon press
-            print('Notification Icon Pressed');
+            Navigator.pushNamed(context, '/notification');
+            // print('Notification Icon Pressed');
           },
         ),
-       
       ],
     );
   }

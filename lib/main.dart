@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_managaer/scrrens/Notification.dart';
 import 'package:task_managaer/scrrens/Welcome.dart';
 import 'package:task_managaer/scrrens/dashboard.dart';
 import 'package:task_managaer/scrrens/first.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
             '/third':(context) => ThirdWelcome(),
              '/login':(context) => Login(),
              '/signup':(context) => Register(),
-             '/home':(context) => Dashboard()
+             '/home':(context) => Dashboard(),
+             '/notification':(context) => NoticationPage()
               },
       // home: Login(),
     );
